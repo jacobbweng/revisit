@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revisit</title>
+<meta name="description" content="Revisit finds regulars who stopped coming back, sends them a personal message, and tracks who returns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#home" class="brand">Revisit</a>
+    <ul class="links">
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#solutions" data-nav="solutions">Solutions</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a href="#contact" class="btn dark sm">Get Started ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+  </div>
+  <div class="mobile" id="mobileMenu" hidden>
+    <div class="wrap">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#solutions" data-nav="solutions">Solutions</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <a href="#contact" class="btn dark">Get Started ↗</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HOME ================= -->
+<main data-page="home">
+  <section class="hero">
+    <span class="tag" style="left:6%;top:18%">POS checks</span>
+    <span class="tag" style="right:7%;top:16%">Loyalty</span>
+    <span class="tag" style="left:2%;top:58%">Online orders</span>
+    <span class="tag" style="right:3%;top:56%">Reservations</span>
+    <span class="tag" style="left:12%;bottom:12%">Visit history</span>
+    <span class="tag" style="right:12%;bottom:14%">Order history</span>
+    <div class="wrap">
+      <span class="eyebrow">AI retention for restaurants</span>
+      <h1>Bring your customers back. <b>Automatically.</b></h1>
+      <p class="sub">Revisit spots regulars who stopped coming, sends each a personal text, and tracks who returns.</p>
+      <div class="actions">
+        <a href="#contact" class="btn dark">Get Started ↗</a>
+        <a href="#solutions" class="btn ghost">See Our Solution</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="customers">
+    <div class="wrap">
+      <span class="eyebrow">Restaurants using Revisit</span>
+      <div class="logos">
+        <div class="logo"><img src="assets/img/fish-cajun-crab.webp" alt="Fish &amp; Cajun Crab" width="346" height="138"></div>
+        <div class="logo"><img src="assets/img/a-town-wings.webp" alt="A-Town Wings" width="992" height="213"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">The portal</span>
+        <h2>See who left, who came back, and what it earned.</h2>
+      </div>
+      <div class="frame"><img src="assets/img/dashboard.webp" alt="Revisit dashboard with guests returned, return rate, return-visit revenue, returns by week, and return rate by message type" width="1698" height="560"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How it works</span>
+        <h2>From customer data to customer return.</h2>
+      </div>
+      <div class="row">
+        <div><span class="n">01</span><h3>Detect</h3><p>A regular hasn't been back in 45 days.</p></div>
+        <div><span class="n">02</span><h3>Understand</h3><p>We read their visits and usual order.</p></div>
+        <div><span class="n">03</span><h3>Reach out</h3><p>AI writes them a personal SMS or email.</p></div>
+        <div><span class="n">04</span><h3>Track</h3><p>We see if they return and what they spend.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Every message is personal</span>
+        <h2>No coupon blasts. Just a note they'll recognize.</h2>
+      </div>
+      <div class="msgs">
+        <div class="msg-card"><div class="who"><b>Sarah</b><span class="chip">Usual: Chicken Alfredo</span></div><div class="bubble">Hey Sarah! We haven't seen you in a while. Your chicken Alfredo misses you. Hope to see you soon.</div></div>
+        <div class="msg-card"><div class="who"><b>James</b><span class="chip">Weekend regular</span></div><div class="bubble">It's been a while, James. Join us this weekend for your usual favorites.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Your next returning customer is already in your POS.</h2>
+        <a href="#contact" class="btn dark">Get Started ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= SOLUTIONS ================= -->
+<main data-page="solutions" hidden>
+  <section class="hero" style="padding-bottom:56px">
+    <div class="wrap">
+      <span class="eyebrow">Solutions</span>
+      <h1>Customer retention, <b>powered by AI.</b></h1>
+      <p class="sub">Find inactive guests, reach them personally, and measure who comes back.</p>
+    </div>
+  </section>
+
+  <section class="sol">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">01 · Detection</span>
+        <h2>Know when a customer is slipping away.</h2>
+        <p>Revisit learns each guest's visit pattern and flags them when they're overdue.</p>
+      </div>
+      <div class="frame"><img src="assets/img/guests.webp" alt="Revisit guest list with each guest's status, visits, usual gap, last visit, and most-ordered item" width="1600" height="540" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="sol band">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">02 · Personalized outreach</span>
+        <h2>Every customer gets a reason to come back.</h2>
+        <p>Messages are written from each guest's own history.</p>
+      </div>
+      <div class="msgs">
+        <div class="msg-card"><div class="who"><b>Sarah</b><span class="chip">Pasta regular</span></div><div class="bubble">We've added a few new pasta dishes you might love. Come see what's new.</div></div>
+        <div class="msg-card"><div class="who"><b>James</b><span class="chip">Weekend regular</span></div><div class="bubble">It's been a while, James. Join us this weekend and enjoy your usual favorites.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sol">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">03 · Automated SMS &amp; email</span>
+        <h2>Reach customers automatically.</h2>
+        <p>No lists to pull. No copy to write.</p>
+      </div>
+      <div class="flow">
+        <div class="step"><span class="n">01</span><h3>Customer identified</h3></div>
+        <span class="arr" aria-hidden="true">→</span>
+        <div class="step"><span class="n">02</span><h3>Message written</h3></div>
+        <span class="arr" aria-hidden="true">→</span>
+        <div class="step"><span class="n">03</span><h3>Message sent</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sol band">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">04 · Retention analytics</span>
+        <h2>See what actually brings customers back.</h2>
+        <p>Returns, return rate, and revenue for every campaign.</p>
+      </div>
+      <div class="frame"><img src="assets/img/dashboard.webp" alt="Revisit dashboard with returns by week and return rate by message type" width="1698" height="560" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="sol">
+    <div class="wrap sol-grid">
+      <div class="sol-copy">
+        <span class="eyebrow left">05 · Intelligent retention</span>
+        <h2>45 days is only the beginning.</h2>
+        <p>Today's rule is simple. Next, Revisit learns each guest's own rhythm and reaches out at the right time for them.</p>
+        <span class="rule">4+ visits · 45 days inactive → outreach</span>
+        <span class="soon">In development</span>
+      </div>
+      <div class="rhythm">
+        <div class="r"><b>Visits every 15 days</b><span>A fixed 45-day rule reaches out too late.</span></div>
+        <div class="r"><b>Visits every 60 days</b><span>A fixed 45-day rule reaches out too early.</span></div>
+        <div class="r"><b>Revisit's model</b><span>Times each message to the guest's normal pattern.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Ready to turn customer data into repeat visits?</h2>
+        <a href="#contact" class="btn dark">Contact Revisit ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= CONTACT ================= -->
+<main data-page="contact" hidden>
+  <section>
+    <div class="wrap contact">
+      <div class="contact-copy">
+        <span class="eyebrow left">Contact</span>
+        <h1 style="font-size:clamp(2.1rem,4.4vw,3.2rem)">Let's bring your customers back.</h1>
+        <p class="muted">Tell us about your restaurant and we'll be in touch.</p>
+        <div class="mail">
+          <a data-email-link href="mailto:revisit.atl@gmail.com"><span data-email>revisit.atl@gmail.com</span></a>
+          <button type="button" class="copy" id="copyEmail">Copy</button>
+        </div>
+      </div>
+      <div class="form">
+        <form id="contactForm" novalidate>
+          <div class="two">
+            <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><span class="msg" hidden></span></div>
+            <div class="f"><label for="f-company">Restaurant / Company</label><input id="f-company" name="company" autocomplete="organization" required><span class="msg" hidden></span></div>
+          </div>
+          <div class="two">
+            <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="msg" hidden></span></div>
+            <div class="f"><label for="f-locations">Number of Locations</label>
+              <select id="f-locations" name="locations" required><option value="" disabled selected>Select</option><option>1</option><option>2–5</option><option>6–20</option><option>21+</option></select><span class="msg" hidden></span></div>
+          </div>
+          <div class="f"><label for="f-message">Message</label><textarea id="f-message" name="message"></textarea></div>
+          <div><button type="submit" class="btn dark">Get Started ↗</button></div>
+        </form>
+        <div class="done" id="formSuccess" hidden role="status" aria-live="polite">
+          <h3>Thanks! We'll be in touch soon.</h3>
+          <button type="button" class="btn ghost sm" id="formReset">Send another</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main data-page="privacy" hidden>
+  <section><div class="wrap legal"><h1 style="font-size:2.4rem">Privacy</h1><p>We use the information you send us only to reply to you. We never sell it. Questions: <span data-email>revisit.atl@gmail.com</span></p></div></section>
+</main>
+<main data-page="terms" hidden>
+  <section><div class="wrap legal"><h1 style="font-size:2.4rem">Terms</h1><p>Full terms of service are coming soon. Questions: <span data-email>revisit.atl@gmail.com</span></p></div></section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="#home" class="brand">Revisit</a><p class="muted" style="font-size:.92rem">Bring your customers back. Automatically.</p></div>
+      <ul><li><a href="#solutions">Solutions</a></li><li><a href="#contact">Contact</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#terms">Terms</a></li></ul>
+    </div>
+    <div class="fine"><span>© 2026 REVISIT</span><span data-email>revisit.atl@gmail.com</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
