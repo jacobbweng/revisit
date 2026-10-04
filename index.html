@@ -162,6 +162,35 @@ footer{border-top:1px solid var(--line);padding-block:40px}
 .foot ul a{color:var(--muted);text-decoration:none;font-size:.92rem}
 .foot ul a:hover{color:var(--ink)}
 .fine{margin-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--faint)}
+
+/* ---------- Animations (skipped for visitors who prefer reduced motion) ---------- */
+@media (prefers-reduced-motion: no-preference){
+  .btn{transition:transform .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.dark:hover{box-shadow:0 8px 20px -10px rgba(31,36,48,.5)}
+  .links a{transition:color .2s ease,background-color .2s ease}
+  .logo,.frame,.msg-card,.flow .step,.rhythm .r{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,border-color .35s ease}
+  .logo:hover,.msg-card:hover,.flow .step:hover,.rhythm .r:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:0 14px 28px -20px rgba(31,36,48,.35)}
+  .frame:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(31,36,48,.03),0 34px 60px -34px rgba(31,36,48,.35)}
+
+  /* Hero: content rises in on load, background labels drift gently */
+  .hero .wrap > *{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero .wrap > :nth-child(2){animation-delay:.08s}
+  .hero .wrap > :nth-child(3){animation-delay:.16s}
+  .hero .wrap > :nth-child(4){animation-delay:.24s}
+  .tag{animation:fade 1.2s .5s both,drift 9s ease-in-out 1.7s infinite alternate}
+  .tag:nth-of-type(even){animation-duration:1.2s,11s}
+
+  /* Page switch */
+  main.enter{animation:fade .45s ease both}
+
+  /* Scroll reveal: only hidden once the script has started, so content always shows without JS */
+  .anim .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .anim .reveal.in{opacity:1;transform:none}
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-8px)}}
 </style>
 
 </head>
@@ -430,7 +459,27 @@ const CONFIG = { email: "revisit.atl@gmail.com" };
     pages.forEach(p => p.hidden = p.dataset.page !== id);
     document.querySelectorAll("[data-nav]").forEach(a => a.dataset.nav === id ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
     document.title = titles[id]; setMenu(false); window.scrollTo(0, 0);
+    const cur = pages.find(p => !p.hidden);
+    if (cur) { cur.classList.remove("enter"); void cur.offsetWidth; cur.classList.add("enter"); }
+    if (window.revealScan) window.revealScan();
   }
+
+  /* Scroll reveal: fade sections in as they enter the screen */
+  (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    const targets = ".customers .wrap, .head, .frame, .row > div, .msgs > .msg-card, .flow > .step, .sol-copy, .rhythm .r, .cta, .contact-copy, .form";
+    document.querySelectorAll(targets).forEach(el => el.classList.add("reveal"));
+    /* stagger items that sit side by side */
+    document.querySelectorAll(".row, .msgs, .flow, .rhythm").forEach(group => {
+      [...group.querySelectorAll(".reveal")].forEach((el, i) => el.style.transitionDelay = (i * 90) + "ms");
+    });
+    document.documentElement.classList.add("anim");
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }), { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    window.revealScan = () => document.querySelectorAll("main:not([hidden]) .reveal:not(.in)").forEach(el => io.observe(el));
+    window.revealScan();
+  })();
   window.addEventListener("hashchange", route); route();
   document.addEventListener("click", e => { const a = e.target.closest('a[href^="#"]'); if (a && a.getAttribute("href") === location.hash) { setMenu(false); window.scrollTo(0, 0); } });
 
